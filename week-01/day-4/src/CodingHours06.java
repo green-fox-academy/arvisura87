@@ -1,4 +1,4 @@
-public class CodingHours6 {
+public class CodingHours06 {
     public static void main(String[] args) {
         // An average Green Fox attendee codes 6 hours daily
         // The semester is 17 weeks long

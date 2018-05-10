@@ -101,10 +101,10 @@ public class VariableMutation11 {
 
 
         int j = 1521;
-        int div3 = j/3;
-        int div5 = j/5;
+        int div3 = j%3;
+        int div5 = j%5;
         // tell if j is dividable by 3 or 5 (print as a boolean)
-        if (div3==00 || div5==0) {
+        if (div3==0 || div5==0) {
             System.out.println(true);
         } else {
             System.out.println(false);

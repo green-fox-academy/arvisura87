@@ -25,11 +25,11 @@ public class PartyIndicator21 {
         int num1 = scanner.nextInt();
         int num2 = scanner.nextInt();
 
-        if (num1==num2 && (num1+num2>20)) {
+        if (num1!=0 && num1==num2 && (num1+num2>20)) {
             System.out.println("The party is exellent!");
-        } else if (num1!=num2 && (num1+num2>20)){
+        } else if (num1!=0 && num1!=num2 && (num1+num2>20)){
             System.out.println("Quite cool party!");
-        } else if ((num1+num2<20)) {
+        } else if ((num1!=0 && num1+num2<20)) {
             System.out.println("Average party...");
         } else if (num1==0) {
             System.out.println("Sausage part");

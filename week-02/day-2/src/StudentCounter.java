@@ -47,6 +47,21 @@ public class StudentCounter {
     //  - Sum the age of people who have lass than 5 candies
 
     System.out.println(moreCandies(map));
+    System.out.println(sumAge(map));
+  }
+
+  private static double sumAge(ArrayList<Map<String,Object>> map) {
+
+    double sum=0;
+
+    for (int i = 0; i < map.size(); i++) {
+      if ( (int)map.get(i).get("candies")  <5){
+        sum+= Double.valueOf(map.get(i).get("age").toString());
+      }
+
+    }
+
+    return sum;
   }
 
   public static ArrayList<String> moreCandies(ArrayList<Map<String, Object>> map) {
@@ -54,7 +69,7 @@ public class StudentCounter {
     ArrayList<String> whoHasGotMore = new ArrayList<>();
 
     for (int i = 0; i < map.size(); i++) {
-      if ((map.get(i).get("candies")).hashCode()>4){
+      if ( (int)map.get(i).get("candies")  >4){
         whoHasGotMore.add(map.get(i).get("name").toString());
       }
     }

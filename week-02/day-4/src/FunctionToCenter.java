@@ -20,7 +20,23 @@ public class FunctionToCenter {
 
   private static void lineToCenter(int xCoordinate, int yCoordinate, Graphics graphics) {
     graphics.setColor(Color.red);
-    graphics.drawLine(xCoordinate, yCoordinate, WIDTH/2, HEIGHT/2);
+
+    for (int i = 0; i < HEIGHT/20; i++) {
+        graphics.drawLine(xCoordinate, yCoordinate + i * 20, WIDTH / 2, HEIGHT / 2);
+    }
+
+    for (int i = 0; i < WIDTH/20; i++) {
+      graphics.drawLine(xCoordinate+ i*20, yCoordinate, WIDTH / 2, HEIGHT / 2);
+    }
+
+    for (int i = 0; i < HEIGHT/20; i++) {
+      graphics.drawLine(WIDTH-xCoordinate, HEIGHT-yCoordinate - i * 20, WIDTH / 2, HEIGHT / 2);
+    }
+
+    for (int i = 0; i < WIDTH/20; i++) {
+      graphics.drawLine(WIDTH-xCoordinate - i * 20, HEIGHT-yCoordinate, WIDTH / 2, HEIGHT / 2);
+    }
+
   }
 
   // Don't touch the code below

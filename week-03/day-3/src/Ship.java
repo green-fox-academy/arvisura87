@@ -52,9 +52,11 @@ public class Ship {
     int scoreEnemy = 0;
     int thisDeaths = 0;
     int enemyDeaths = 0;
+    int rumParty = 0;
 
     thisDeaths = (int) Math.ceil(Math.random() * this.crew.size());
-    enemyDeaths = (int) Math.ceil(Math.random() * this.crew.size());
+    enemyDeaths = (int) Math.ceil(Math.random() * enemyShip.crew.size());
+    rumParty = (int) Math.ceil(Math.random() * 100);
 
     for (int i = 1; i < this.crew.size(); i++) {
       if (this.crew.get(i).isAlive){
@@ -72,17 +74,24 @@ public class Ship {
     scoreEnemy -= enemyShip.crew.get(0).howManyDrinksWas;
 
     if (scoreThis > scoreEnemy){
-      for (int i = 0; i < enemyDeaths; i++) {
-        enemyShip.crew.get(i+1).die();
+      for (int i = 1; i < enemyDeaths; i++) {
+        enemyShip.crew.get(i).die();
       }
     } else {
-      for (int i = 0; i < thisDeaths; i++) {
-        this.crew.get(i+1).die();
+      for (int i = 1; i < thisDeaths; i++) {
+        this.crew.get(i).die();
       }
     }
-
-
+    
+    if (scoreThis > scoreEnemy){
+      for (int i = 0; i < this.crew.size(); i++) {
+        this.crew.get(i).howManyDrinksWas += rumParty;
+      }
+    } else {
+      for (int i = 0; i < enemyShip.crew.size(); i++) {
+        enemyShip.crew.get(i).howManyDrinksWas += rumParty;
+      }
+    }
     return (scoreThis > scoreEnemy) ? true : false;
-
   }
 }

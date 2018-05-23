@@ -9,7 +9,7 @@ public class Ship {
     this.crew = new ArrayList<>();
     this.crew.add(captain);
 
-    for (int i = 1; i < pirates.length; i++) {
+    for (int i = 0; i < pirates.length; i++) {
       this.crew.add(pirates[i]);
     }
   }

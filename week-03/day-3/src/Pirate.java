@@ -5,6 +5,7 @@ public class Pirate {
   boolean isAwake;
   boolean isToxic;
   int howManyDrinksWas;
+  Parrot parrot;
 
   public Pirate(String name){
     this.name = name;
@@ -65,5 +66,9 @@ public class Pirate {
     } else {
       System.out.println("Oh, they already dead, there will be no fight!");
     }
+  }
+
+  public void getParrot(Parrot parrot){
+    this.parrot = parrot;
   }
 }

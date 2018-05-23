@@ -15,6 +15,12 @@ public class BattleApp {
     Ship ship2 = new Ship();
     ship2.fillShip(captain2, pirate3, pirate4, pirate5);
 
+    System.out.println(ship1.toString());
+    System.out.println(ship2.toString());
+
     ship1.battle(ship2);
+
+    System.out.println(ship1.toString());
+    System.out.println(ship2.toString());
   }
 }

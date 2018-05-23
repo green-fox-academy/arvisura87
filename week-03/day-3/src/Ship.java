@@ -46,4 +46,43 @@ public class Ship {
 
     return result;
   }
+
+  public boolean battle(Ship enemyShip){
+    int scoreThis = 0;
+    int scoreEnemy = 0;
+    int thisDeaths = 0;
+    int enemyDeaths = 0;
+
+    thisDeaths = (int) Math.ceil(Math.random() * this.crew.size());
+    enemyDeaths = (int) Math.ceil(Math.random() * this.crew.size());
+
+    for (int i = 1; i < this.crew.size(); i++) {
+      if (this.crew.get(i).isAlive){
+        scoreThis++;
+      }
+    }
+
+    for (int i = 1; i < enemyShip.crew.size(); i++) {
+      if (enemyShip.crew.get(i).isAlive){
+        scoreEnemy++;
+      }
+    }
+
+    scoreThis -= this.crew.get(0).howManyDrinksWas;
+    scoreEnemy -= enemyShip.crew.get(0).howManyDrinksWas;
+
+    if (scoreThis > scoreEnemy){
+      for (int i = 0; i < enemyDeaths; i++) {
+        enemyShip.crew.get(i+1).die();
+      }
+    } else {
+      for (int i = 0; i < thisDeaths; i++) {
+        this.crew.get(i+1).die();
+      }
+    }
+
+
+    return (scoreThis > scoreEnemy) ? true : false;
+
+  }
 }

@@ -1,8 +1,6 @@
-public class Captain {
+public class Captain extends Pirate{
 
-  String name;
-
-  public Captain(String name){
-    this.name = name;
+  public Captain(String name) {
+    super(name);
   }
 }

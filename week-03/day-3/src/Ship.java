@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Ship {
 
   ArrayList<Pirate> crew;
+  int alivePirates = 0;
 
   public void fillShip(Captain captain, Pirate... pirates){
     this.crew = new ArrayList<>();
@@ -18,7 +19,6 @@ public class Ship {
     String result = "";
     String captainRum;
     String captainState;
-    int alivePirates = 0;
 
     if (crew.get(0).isToxic){
       captainRum = "The captain did drink rum. ";

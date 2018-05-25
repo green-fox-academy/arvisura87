@@ -48,14 +48,9 @@ public class Ship {
   }
 
   public boolean battle(Ship enemyShip){
-    int scoreThis = calculateThisScore();
-    int scoreEnemy = calculateEnemyScore(enemyShip);
-    int thisDeaths = randomThis(thisSize());
-    int enemyDeaths = randomEnemy(enemySize(enemyShip));
-
-    loserMustDie(scoreThis, scoreEnemy, thisDeaths, enemyDeaths, enemyShip);
-    haveARumParty(scoreThis, scoreEnemy, enemyShip);
-    return whoWon(scoreThis, scoreEnemy);
+    loserMustDie(calculateThisScore(), calculateEnemyScore(enemyShip), randomThis(thisSize()), randomEnemy(enemySize(enemyShip)), enemyShip);
+    haveARumParty(calculateThisScore(), calculateEnemyScore(enemyShip), enemyShip);
+    return whoWon(calculateThisScore(), calculateEnemyScore(enemyShip));
   }
 
   private void haveARumParty(int scoreThis, int scoreEnemy, Ship enemyShip) {

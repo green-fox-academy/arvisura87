@@ -52,10 +52,14 @@ public class Ship {
     int scoreEnemy = calculateEnemyScore(enemyShip);
     int thisDeaths = randomThis(thisSize());
     int enemyDeaths = randomEnemy(enemySize(enemyShip));
-    int rumParty = randomRum();
 
     loserMustDie(scoreThis, scoreEnemy, thisDeaths, enemyDeaths, enemyShip);
-    
+    haveARumParty(scoreThis, scoreEnemy, enemyShip);
+    return whoWon(scoreThis, scoreEnemy);
+  }
+
+  private void haveARumParty(int scoreThis, int scoreEnemy, Ship enemyShip) {
+    int rumParty = randomRum();
     if (scoreThis > scoreEnemy){
       for (int i = 0; i < this.crew.size(); i++) {
         this.crew.get(i).howManyDrinksWas += rumParty;
@@ -65,7 +69,6 @@ public class Ship {
         enemyShip.crew.get(i).howManyDrinksWas += rumParty;
       }
     }
-    return whoWon(scoreThis, scoreEnemy);
   }
 
   private void loserMustDie(int scoreThis, int scoreEnemy, int thisDeaths, int enemyDeaths, Ship enemyShip) {

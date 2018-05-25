@@ -54,9 +54,9 @@ public class Ship {
     int enemyDeaths = 0;
     int rumParty = 0;
 
-    thisDeaths = (int) Math.ceil(Math.random() * this.crew.size());
-    enemyDeaths = (int) Math.ceil(Math.random() * enemyShip.crew.size());
-    rumParty = (int) Math.ceil(Math.random() * 100);
+    thisDeaths = randomThis(this.crew.size());
+    enemyDeaths = randomEnemy(enemyShip.crew.size());
+    rumParty = randomRum();
 
     for (int i = 1; i < this.crew.size(); i++) {
       if (this.crew.get(i).isAlive){
@@ -93,6 +93,21 @@ public class Ship {
       }
     }
     return whoWon(scoreThis, scoreEnemy);
+  }
+
+  private int randomRum() {
+    int result = (int) Math.ceil(Math.random() * 100);
+    return result;
+  }
+
+  private int randomEnemy(int size) {
+    int result = (int) Math.ceil(Math.random() * size);
+    return result;
+  }
+
+  private int randomThis(int size) {
+    int result = (int) Math.ceil(Math.random() * size);
+    return result;
   }
 
   private boolean whoWon(int scoreThis, int scoreEnemy) {

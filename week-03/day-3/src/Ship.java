@@ -48,40 +48,13 @@ public class Ship {
   }
 
   public boolean battle(Ship enemyShip){
-    int scoreThis = 0;
-    int scoreEnemy = 0;
-    int thisDeaths = 0;
-    int enemyDeaths = 0;
-    int rumParty = 0;
+    int scoreThis = calculateThisScore();
+    int scoreEnemy = calculateEnemyScore(enemyShip);
+    int thisDeaths = randomThis(thisSize());
+    int enemyDeaths = randomEnemy(enemySize(enemyShip));
+    int rumParty = randomRum();
 
-    thisDeaths = randomThis(this.crew.size());
-    enemyDeaths = randomEnemy(enemyShip.crew.size());
-    rumParty = randomRum();
-
-    for (int i = 1; i < this.crew.size(); i++) {
-      if (this.crew.get(i).isAlive){
-        scoreThis++;
-      }
-    }
-
-    for (int i = 1; i < enemyShip.crew.size(); i++) {
-      if (enemyShip.crew.get(i).isAlive){
-        scoreEnemy++;
-      }
-    }
-
-    scoreThis -= this.crew.get(0).howManyDrinksWas;
-    scoreEnemy -= enemyShip.crew.get(0).howManyDrinksWas;
-
-    if (scoreThis > scoreEnemy){
-      for (int i = 1; i < enemyDeaths; i++) {
-        enemyShip.crew.get(i).die();
-      }
-    } else {
-      for (int i = 1; i < thisDeaths; i++) {
-        this.crew.get(i).die();
-      }
-    }
+    loserMustDie(scoreThis, scoreEnemy, thisDeaths, enemyDeaths, enemyShip);
     
     if (scoreThis > scoreEnemy){
       for (int i = 0; i < this.crew.size(); i++) {
@@ -93,6 +66,52 @@ public class Ship {
       }
     }
     return whoWon(scoreThis, scoreEnemy);
+  }
+
+  private void loserMustDie(int scoreThis, int scoreEnemy, int thisDeaths, int enemyDeaths, Ship enemyShip) {
+    if (scoreThis > scoreEnemy){
+      for (int i = 1; i < enemyDeaths; i++) {
+        enemyShip.crew.get(i).die();
+      }
+    } else {
+      for (int i = 1; i < thisDeaths; i++) {
+        this.crew.get(i).die();
+      }
+    }
+  }
+
+  private int calculateEnemyScore(Ship enemyShip) {
+    int result = 0;
+    for (int i = 1; i < enemyShip.crew.size(); i++) {
+      if (enemyShip.crew.get(i).isAlive){
+        result++;
+      }
+    }
+    result -= enemyShip.crew.get(0).howManyDrinksWas;
+
+    return result;
+  }
+
+  private int calculateThisScore() {
+    int result = 0;
+    for (int i = 1; i < this.crew.size(); i++) {
+      if (this.crew.get(i).isAlive){
+        result++;
+      }
+    }
+    result -= this.crew.get(0).howManyDrinksWas;
+
+    return result;
+  }
+
+  private int enemySize(Ship enemy) {
+    int result = enemy.crew.size();
+    return result;
+  }
+
+  private int thisSize() {
+    int result = this.crew.size();
+    return result;
   }
 
   private int randomRum() {

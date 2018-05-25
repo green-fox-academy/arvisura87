@@ -92,6 +92,10 @@ public class Ship {
         enemyShip.crew.get(i).howManyDrinksWas += rumParty;
       }
     }
+    return whoWon(scoreThis, scoreEnemy);
+  }
+
+  private boolean whoWon(int scoreThis, int scoreEnemy) {
     return (scoreThis > scoreEnemy) ? true : false;
   }
 }

@@ -1,7 +1,7 @@
 public class Plant {
 
-  private String color;
-  private double currentWater;
+  String color;
+  double currentWater;
 
   public Plant(String color) {
     this.color = color;

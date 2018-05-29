@@ -10,4 +10,9 @@ public class Mentor extends Person {
     super(name, age, gender);
     this.level = level;
   }
+
+  @Override
+  public void getGoal() {
+    System.out.println("Educate brilliant junior software developers.");
+  }
 }

@@ -1,4 +1,4 @@
-public class Tree extends Plant{
+public class Tree extends Plant {
 
   public Tree(String color) {
     super(color);
@@ -8,6 +8,9 @@ public class Tree extends Plant{
   public void watering(double amountOfWater) {
     if (this.currentWater < 10) {
       this.currentWater += 0.4 * amountOfWater;
+      if (this.currentWater > 10) {
+        this.needWater = false;
+      }
     }
   }
 }

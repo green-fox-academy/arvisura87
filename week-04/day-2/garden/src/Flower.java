@@ -1,2 +1,2 @@
-public class Flower {
+public class Flower extends Plant{
 }

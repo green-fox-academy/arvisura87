@@ -1,2 +1,2 @@
-public class Tree {
+public class Tree extends Plant{
 }

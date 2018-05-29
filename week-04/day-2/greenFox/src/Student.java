@@ -28,4 +28,8 @@ public class Student extends Person {
         + " who skipped " + skippedDays
         + " days from the course already.");
   }
+
+  public void skipDays(int numberOfDays) {
+    this.skippedDays += numberOfDays;
+  }
 }

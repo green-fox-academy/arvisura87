@@ -33,4 +33,8 @@ public class Sponsor extends Person {
         + this.hiredStudents
         + " students so far.");
   }
+
+  public void hire() {
+    this.hiredStudents++;
+  }
 }

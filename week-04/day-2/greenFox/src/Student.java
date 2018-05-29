@@ -4,7 +4,6 @@ public class Student extends Person {
   private int skippedDays;
 
   public Student() {
-    super();
     this.previousOrganization = "The School of Life";
     this.skippedDays = 0;
 

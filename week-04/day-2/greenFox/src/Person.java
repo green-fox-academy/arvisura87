@@ -1,8 +1,8 @@
 public class Person {
 
-  private String name;
-  private int age;
-  private String gender;
+  String name;
+  int age;
+  String gender;
 
   public Person() {
     this.name = "Jane Doe";

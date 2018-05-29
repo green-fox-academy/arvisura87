@@ -13,4 +13,11 @@ public class Sponsor extends Person {
     this.company = company;
     this.hiredStudents = 0;
   }
+
+  @Override
+  public void getGoal() {
+    System.out.println("Hire brilliant junior software developers.");
+  }
+
+  
 }

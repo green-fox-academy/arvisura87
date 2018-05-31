@@ -4,6 +4,10 @@ public class CountLetters {
 
   public HashMap<Character, Integer> countLettersOccurrenceInString(String word1) {
     HashMap<Character, Integer> map = new HashMap<>();
+
+    if (word1 == null) {
+      return map;
+    }
     String word = word1.toLowerCase();
 
     for (int i = 0; i < word.length(); i++) {

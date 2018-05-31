@@ -48,4 +48,13 @@ public class SumTest {
 
     assertEquals(expected, result);
   }
+
+  @Test
+  public void should_returnTheOneIntIn_with_inputNull() {
+    int result = sum.sumOfIntList(null);
+    int expected = 0;
+
+    assertEquals(expected, result);
+  }
+
 }

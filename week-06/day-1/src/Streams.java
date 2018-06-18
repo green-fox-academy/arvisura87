@@ -8,7 +8,15 @@ public class Streams {
   public static void main(String[] args) {
 
     ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14));
+
     System.out.println(getEvenNumbers(numbers));
+    System.out.println(getAverageOfOddNumbers(numbers));
+
+  }
+
+  private static double getAverageOfOddNumbers(ArrayList<Integer> numbers) {
+
+    return numbers.stream().filter(x -> x % 2 != 0).mapToInt(x -> x).average().getAsDouble();
   }
 
   private static List getEvenNumbers(ArrayList<Integer> numbers) {

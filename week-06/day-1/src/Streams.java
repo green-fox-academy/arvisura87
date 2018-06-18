@@ -11,7 +11,13 @@ public class Streams {
 
     System.out.println(getEvenNumbers(numbers));
     System.out.println(getAverageOfOddNumbers(numbers));
+    System.out.println(getSquaredPositiveNumbers(numbers));
 
+  }
+
+  private static List getSquaredPositiveNumbers(ArrayList<Integer> numbers) {
+
+    return numbers.stream().filter(x -> x >= 0).map(n -> n * n).collect(Collectors.toList());
   }
 
   private static double getAverageOfOddNumbers(ArrayList<Integer> numbers) {

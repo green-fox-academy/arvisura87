@@ -1,18 +1,22 @@
 ﻿table {
     border-collapse: collapse;
+    border: 1px #9c9a9a;
     width: 100%;
 }
 
 th, td {
     text-align: left;
     padding: 8px;
+    color: gray;
+    padding: 30px;
+    font-size: 30px;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(odd){background-color: #dcecf3}
 
 th {
-    background-color: #4CAF50;
-    color: white;
+    background-color: black;
 }
 
 body {

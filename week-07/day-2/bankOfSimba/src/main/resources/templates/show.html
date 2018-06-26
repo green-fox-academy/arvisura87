@@ -5,10 +5,10 @@
 </head>
 <body>
 <h1>Bank of Simba</h1>
-<div>
-    <p th:text="'Name: ' + *{bankAccount.name}"></p>
-    <p th:text="'Balance: ' + *{bankAccount.balanceWithCurrency}"></p>
-    <p th:text="'AnimalType: ' + *{bankAccount.animalType}"></p>
+<div th:object="${bankAccount}">
+    <p th:text="'Name: ' + *{name}"></p>
+    <p th:text="'Balance: ' + *{balanceWithCurrency}"></p>
+    <p th:text="'AnimalType: ' + *{animalType}"></p>
 </div>
 </body>
 </html>

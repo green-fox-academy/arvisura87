@@ -6,12 +6,14 @@ public class BankAccount {
   private String animalType;
   private Double balance;
   private String balanceWithCurrency;
+  private String isKing;
 
-  public BankAccount(String name, double balance, String animalType) {
+  public BankAccount(String name, double balance, String animalType, String isKing) {
     this.name = name;
     this.animalType = animalType;
     this.balance = balance;
     balanceWithCurrency = String.format("%.2f Zebra", balance);
+    this.isKing = isKing;
   }
 
   public String getName() {
@@ -44,5 +46,13 @@ public class BankAccount {
 
   public void setBalanceWithCurrency(String balanceWithCurrency) {
     this.balanceWithCurrency = balanceWithCurrency;
+  }
+
+  public String getIsKing() {
+    return isKing;
+  }
+
+  public void setIsKing(String isKing) {
+    this.isKing = isKing;
   }
 }

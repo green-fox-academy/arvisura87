@@ -17,7 +17,7 @@ public class ShowController {
 
   @GetMapping("/show")
   public String showShowPage(Model model) {
-    bankAccount = new BankAccount("Simba", 2000, "lion");
+    bankAccount = new BankAccount("Simba", 2000, "lion", "no");
     model.addAttribute(bankAccount);
 
     return "show";
@@ -33,11 +33,11 @@ public class ShowController {
 
   @GetMapping("/listaccounts")
   public String showListOfAccounts(Model model) {
-    BankAccount zordon = new BankAccount("Zordon", 3000, "lion");
-    BankAccount nala = new BankAccount("Nala", 500, "lion");
-    BankAccount muszafa = new BankAccount("Muszafa", 5000, "lion");
-    BankAccount rafiki = new BankAccount("Rafiki", 300, "monkey");
-    BankAccount zazu = new BankAccount("Zazu", 100, "parrot");
+    BankAccount zordon = new BankAccount("Zordon", 3000, "lion", "no");
+    BankAccount nala = new BankAccount("Nala", 500, "lion", "no");
+    BankAccount muszafa = new BankAccount("Muszafa", 5000, "lion", "yes");
+    BankAccount rafiki = new BankAccount("Rafiki", 300, "monkey", "no");
+    BankAccount zazu = new BankAccount("Zazu", 100, "parrot", "no");
 
     bankAccountList = new ArrayList<>();
     bankAccountList = Arrays.asList(zordon, nala, muszafa, rafiki, zazu);

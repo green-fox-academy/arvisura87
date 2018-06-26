@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <h1>List of accounts</h1>
+        <div th:if="${#lists.isEmpty(bankAccountList)}">
+            <p>No accounts in the list</p>
+        </div>
+        <div th:unless="${#lists.isEmpty(bankAccountList)}">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Balance</th>
+                        <th>AnimalType</th>
+                    </tr>
+                </thead>
+                <tbody th:each="account : ${bankAccountList}">
+                    <tr>
+                        <td th:text="${account.name}"></td>
+                        <td th:text="${account.balanceWithCurrency}"></td>
+                        <td th:text="${account.animalType}"></td>
+                    </tr>
+                 </tbody>
+            </table>
+        </div>
+</body>
+</html>

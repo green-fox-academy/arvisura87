@@ -12,6 +12,7 @@
             <table border="1">
                 <thead>
                     <tr>
+                        <th>Index</th>
                         <th>Name</th>
                         <th>Balance</th>
                         <th>AnimalType</th>
@@ -19,6 +20,7 @@
                 </thead>
                 <tbody th:each="account : ${bankAccountList}">
                     <tr>
+                        <td th:text="${accountStat.index}"></td>
                         <td th:text="${account.name}"></td>
                         <td th:text="${account.balanceWithCurrency}"></td>
                         <td th:text="${account.animalType}"></td>

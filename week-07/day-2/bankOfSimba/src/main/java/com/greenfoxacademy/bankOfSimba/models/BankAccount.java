@@ -3,13 +3,15 @@ package com.greenfoxacademy.bankOfSimba.models;
 public class BankAccount {
 
   private String name;
-  private int balance;
   private String animalType;
+  private Double balance;
+  private String balanceWithCurrency;
 
-  public BankAccount(String name, int balance, String animalType) {
+  public BankAccount(String name, double balance, String animalType) {
     this.name = name;
-    this.balance = balance;
     this.animalType = animalType;
+    this.balance = balance;
+    balanceWithCurrency = String.format("%.2f Zebra", balance);
   }
 
   public String getName() {
@@ -20,19 +22,27 @@ public class BankAccount {
     this.name = name;
   }
 
-  public int getBalance() {
-    return balance;
-  }
-
-  public void setBalance(int balance) {
-    this.balance = balance;
-  }
-
   public String getAnimalType() {
     return animalType;
   }
 
   public void setAnimalType(String animalType) {
     this.animalType = animalType;
+  }
+
+  public Double getBalance() {
+    return balance;
+  }
+
+  public void setBalance(Double balance) {
+    this.balance = balance;
+  }
+
+  public String getBalanceWithCurrency() {
+    return balanceWithCurrency;
+  }
+
+  public void setBalanceWithCurrency(String balanceWithCurrency) {
+    this.balanceWithCurrency = balanceWithCurrency;
   }
 }

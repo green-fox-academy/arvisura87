@@ -9,6 +9,10 @@
 <div th:if="${#lists.isEmpty(todoList)}">
     <p>No todos in the list</p>
 </div>
+<div>
+    <a href="/todo/add">Add new todo</a>
+</div>
+<br>
 <div th:unless="${#lists.isEmpty(todoList)}">
     <table border="1">
         <thead>

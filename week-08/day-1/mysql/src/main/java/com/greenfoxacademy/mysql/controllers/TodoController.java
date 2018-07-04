@@ -11,16 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/todo")
 public class TodoController {
 
-  private TodoRepository todoRepository;
-
   @Autowired
-  public TodoController(TodoRepository todoRepository) {
-    this.todoRepository = todoRepository;
-  }
+  private TodoRepository todoRepository;
 
   @GetMapping(value={"/", "/list"})
   public String list(Model model) {
-    model.addAttribute("todos", todoRepository.findAll());
+    model.addAttribute("todoList", todoRepository.findAll());
     return "todolist";
   }
 }

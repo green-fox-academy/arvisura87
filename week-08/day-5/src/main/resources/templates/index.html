@@ -2,24 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Todos</title>
+    <title>Reddit</title>
 </head>
 <body>
 <div>
-    <a href="#">Submit new post</a>
+    <a href="submit">Submit new post</a>
 </div>
 <br>
 <h1>Trending posts</h1>
 <br>
 <div>
     <table>
-        <tbody >
+        <tbody th:each="post : ${postList}">
         <tr>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
+            <td th:text="${post.trending}"></td>
+            <td>+</td>
+            <td>-</td>
+            <td th:text="${post.title}"></td>
         </tr>
         </tbody>
     </table>

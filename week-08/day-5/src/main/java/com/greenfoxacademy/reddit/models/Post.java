@@ -13,9 +13,10 @@ public class Post {
   private long id;
   private String title;
   private String url;
-  private long trending;
+  private Integer trending;
 
   public Post() {
+    trending = 1;
   }
 
   public Post(String title, String url) {
@@ -52,7 +53,7 @@ public class Post {
     return trending;
   }
 
-  public void setTrending(long trending) {
+  public void setTrending(Integer trending) {
     this.trending = trending;
   }
 }

@@ -15,22 +15,23 @@ public class PostController {
   @Autowired
   private PostRepository postRepository;
 
-  @GetMapping("")
+  @GetMapping("/")
   public String index(Model model) {
     model.addAttribute("postList", postRepository.findAll());
     return "index";
   }
 
-  @GetMapping
+  @GetMapping("/submit")
   public String post(Model model) {
-    model.addAttribute(new Post());
+    Post post = new Post();
+    model.addAttribute(post);
     return "submit";
   }
 
-  @PostMapping
+  @PostMapping("/submit")
   public String submitPost(@ModelAttribute Post post) {
     postRepository.save(post);
-    return "redirect:";
+    return "redirect:/";
   }
 }
 

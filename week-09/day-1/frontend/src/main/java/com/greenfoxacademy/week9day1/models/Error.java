@@ -1,11 +1,11 @@
-package com.greenfoxacademy.week9day1;
+package com.greenfoxacademy.week9day1.models;
 
 public class Error {
 
   private String error;
 
-  public Error() {
-    error = "Please provide an input!";
+  public Error(String message) {
+    error = message;
   }
 
   public String getError() {

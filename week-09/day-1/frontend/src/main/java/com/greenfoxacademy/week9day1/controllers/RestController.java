@@ -1,5 +1,7 @@
-package com.greenfoxacademy.week9day1;
+package com.greenfoxacademy.week9day1.controllers;
 
+import com.greenfoxacademy.week9day1.models.Doubling;
+import com.greenfoxacademy.week9day1.models.Error;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -12,7 +14,7 @@ public class RestController {
       Doubling doubling = new Doubling(input);
       return doubling;
     } else {
-      Error error = new Error();
+      Error error = new Error("Please provide an input!");
       return error;
     }
   }

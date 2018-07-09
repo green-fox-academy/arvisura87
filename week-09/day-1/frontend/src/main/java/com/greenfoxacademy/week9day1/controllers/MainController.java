@@ -1,4 +1,4 @@
-package com.greenfoxacademy.week9day1;
+package com.greenfoxacademy.week9day1.controllers;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.greenfoxacademy.week9day1;
+package com.greenfoxacademy.week9day1.models;
 
 public class Doubling {
 

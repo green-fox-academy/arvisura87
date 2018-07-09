@@ -1,12 +1,9 @@
 package com.greenfoxacademy.week9day1.controllers;
 
-import com.greenfoxacademy.week9day1.models.Appenda;
-import com.greenfoxacademy.week9day1.models.Doubling;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.greenfoxacademy.week9day1.models.*;
 import com.greenfoxacademy.week9day1.models.Error;
-import com.greenfoxacademy.week9day1.models.Greet;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -42,5 +39,31 @@ public class RestController {
   public Object appenda(@PathVariable String appendable) {
     Appenda appenda = new Appenda(appendable);
     return appenda;
+  }
+
+  @PostMapping("/dountil/{what}")
+  public Object doUntil(@PathVariable String what,
+                        @RequestBody (required = false) Until until) {
+
+    if (until == null) {
+      Error error = new Error("Please provide a number!");
+      return error;
+    }
+
+    if (what.length() > 3) {
+      int factor = 1;
+      for (int i = 1; i <= until.getUntil(); i++) {
+        factor *= i;
+      }
+      Result result = new Result(factor);
+    } else {
+      int sum = 0;
+      for (int i = 1; i <= until.getUntil(); i++) {
+        sum += i;
+      }
+      Result result = new Result(sum);
+    }
+
+    return null;
   }
 }

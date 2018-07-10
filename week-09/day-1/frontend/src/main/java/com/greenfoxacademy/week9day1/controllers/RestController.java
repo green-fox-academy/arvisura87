@@ -56,14 +56,14 @@ public class RestController {
         factor *= i;
       }
       Result result = new Result(factor);
+      return result;
     } else {
       int sum = 0;
       for (int i = 1; i <= until.getUntil(); i++) {
         sum += i;
       }
       Result result = new Result(sum);
+      return result;
     }
-
-    return null;
   }
 }

@@ -16,12 +16,12 @@ public class MainRestController {
   @Autowired
   ThoughtService thoughtService;
 
-  @GetMapping("")
+  @GetMapping("/")
   public List thoughtsList() {
     return thoughtService.getAllThoughts();
   }
 
-  @PostMapping("")
+  @PostMapping("/")
   public List saveNew(@RequestBody(required = true) String thoughText) {
     thoughtService.saveNew(thoughText);
     return thoughtService.getAllThoughts();
